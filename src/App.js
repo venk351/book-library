@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'
+import Books from './component/Books';
+import { BookProvider } from './BookContext';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import BookDetails from './component/BookDetails';
+import NotFound from './component/NotFound';
+import Debounce from './component/Debounce';
+import Filter from './component/Filter';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <BookProvider>
+    //   <Router>
+    //     <Routes>
+    //       <Route path='/' element={<Books></Books>}></Route>
+    //       <Route path='/books' element={<Navigate to="/"></Navigate>}></Route>
+    //       <Route path='/books/:bookId' element={<BookDetails></BookDetails>}></Route>
+    //       <Route path='*' element={<NotFound></NotFound>}></Route>
+    //     </Routes>
+    //   </Router>
+    // </BookProvider>
+    <div>
+      <Debounce></Debounce>
+      <Filter></Filter>
     </div>
   );
 }
